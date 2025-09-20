@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Servicios - Inversiones BelCam - KenoCia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#38bdf8',
+                        secondary: '#818cf8',
+                        background: '#0f172a',
+                        text: '#e2e8f0',
+                        card_bg: 'rgba(30, 41, 59, 0.6)',
+                        card_border: 'rgba(255, 255, 255, 0.1)',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(129, 140, 248, 0.15), transparent 40%);
+            z-index: -1;
+            animation: move-aurora 25s linear infinite;
+        }
+        @keyframes move-aurora {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, 20px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-background text-text">
+
+    <!-- Encabezado -->
+    <header class="bg-background/80 border-b border-card_border sticky top-0 z-50 backdrop-filter backdrop-blur-lg">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                <h1 class="text-xl font-bold text-white">Inversiones BelCam - KenoCia</h1>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-sm font-medium">
+                <li><a href="servicios.html" class="text-primary transition-colors">Servicios</a></li>
+                <li><a href="index.html#equipo" class="hover:text-primary transition-colors">Equipo</a></li>
+                <li><a href="index.html#modelo" class="hover:text-primary transition-colors">Modelo</a></li>
+                <li><a href="index.html#contacto" class="hover:text-primary transition-colors">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 space-y-24 py-20">
+        <!-- Título de la página -->
+        <section class="text-center pt-12">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white">Nuestras Soluciones</h1>
+            <p class="text-lg text-slate-300 max-w-3xl mx-auto mt-6">
+                Explora en detalle cómo podemos potenciar cada área de tu negocio con tecnología de punta y experiencia comprobada.
+            </p>
+        </section>
+
+        <!-- Detalle de Servicios -->
+        <div class="space-y-20">
+            <!-- Finanzas y Contabilidad -->
+            <section id="finanzas" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Finanzas y Contabilidad</h2>
+                    <p class="text-slate-300 mb-6">Optimizamos la gestión financiera de tu empresa con soluciones que garantizan el cumplimiento fiscal y te dan una visión clara de la salud de tu negocio.</p>
+                    <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Facturación Electrónica:</strong> Cumplimiento total con la normativa SAR en Honduras.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Punto de Venta (POS):</strong> Agiliza tus ventas y controla tu inventario en tiempo real.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Business Intelligence (BI):</strong> Transforma tus datos en decisiones estratégicas con reportes visuales e intuitivos.</div></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Gráficos+Financieros" alt="Finanzas y Contabilidad" class="rounded-2xl shadow-lg">
+                </div>
+            </section>
+
+            <!-- Nóminas y Recursos Humanos -->
+            <section id="rrhh" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                 <div class="order-last md:order-first">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Gestión+de+Equipo" alt="Recursos Humanos" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Nóminas y Recursos Humanos</h2>
+                    <p class="text-slate-300 mb-6">Simplifica la administración de tu personal con un sistema adaptado a la legislación hondureña, desde la contratación hasta la liquidación.</p>
+                    <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Nóminas HN:</strong> Cálculo preciso de salarios, deducciones e impuestos.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Control de Asistencia:</strong> Monitorea horarios y gestiona ausencias de forma centralizada.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Portal del Empleado:</strong> Ofrece a tu equipo una plataforma de autoservicio para consultas y solicitudes.</div></li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Sitio Web y eCommerce -->
+            <section id="web" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Sitio Web y eCommerce</h2>
+                    <p class="text-slate-300 mb-6">Lleva tu negocio al mundo digital con una presencia online profesional y una tienda virtual integrada con tus operaciones.</p>
+                    <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Diseño Web Corporativo:</strong> Proyecta una imagen profesional y atrae nuevos clientes.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Tienda en Línea:</strong> Vende tus productos 24/7 con una plataforma segura y fácil de usar.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Integración con Inventario:</strong> Sincroniza tu stock entre tu tienda física y online automáticamente.</div></li>
+                    </ul>
+                </div>
+                <div>
+                     <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Tienda+Online" alt="eCommerce" class="rounded-2xl shadow-lg">
+                </div>
+            </section>
+            
+            <!-- Consultoría ERP -->
+            <section id="erp" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                 <div class="order-last md:order-first">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Flujo+de+Procesos" alt="Consultoría ERP" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Consultoría ERP (Odoo y SAP)</h2>
+                    <p class="text-slate-300 mb-6">Implementamos y optimizamos los sistemas de gestión más potentes del mercado para centralizar y potenciar tu operación.</p>
+                    <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Implementación Experta:</strong> Despliegue de Odoo (v15-18) y SAP Business One adaptado a tu negocio.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Desarrollo a Medida:</strong> Creamos módulos específicos para resolver tus necesidades únicas.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Integraciones Modernas:</strong> Conectamos tu ERP con otras plataformas usando Angular, .NET, React y Flutter.</div></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Infraestructura y Desarrollo -->
+            <section id="infra" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Infraestructura y Desarrollo</h2>
+                    <p class="text-slate-300 mb-6">Construimos la base tecnológica sólida que tu empresa necesita para crecer, garantizando seguridad, escalabilidad y rendimiento.</p>
+                    <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Virtualización y Nube:</strong> Optimiza tus recursos con Proxmox, VMware y Docker.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Redes y Seguridad:</strong> Protege tu información con soluciones de Fortinet y Cisco.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Aplicaciones Móviles:</strong> Desarrollamos apps para optimizar tus procesos de logística y distribución.</div></li>
+                    </ul>
+                </div>
+                <div>
+                     <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Servidores+y+Red" alt="Infraestructura" class="rounded-2xl shadow-lg">
+                </div>
+            </section>
+
+            <!-- Equipamiento y Hardware -->
+            <section id="hardware" class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                 <div class="order-last md:order-first">
+                    <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Equipos+de+Cómputo" alt="Hardware" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg">
+                    <h2 class="text-3xl font-bold text-white mb-4">Equipamiento y Hardware</h2>
+                    <p class="text-slate-300 mb-6">Proveemos el equipamiento tecnológico de las mejores marcas para potenciar la productividad de tu equipo.</p>
+                     <ul class="space-y-3 text-slate-200">
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Equipos de Cómputo:</strong> Laptops, desktops y servidores de marcas líderes como Dell, HP y Lenovo.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Networking:</strong> Switches, routers y APs de Cisco, Fortinet y Ubiquiti.</div></li>
+                        <li class="flex items-start"><span class="text-primary mr-3 mt-1">✓</span><div><strong>Soluciones "Llave en Mano":</strong> Equipamos tu departamento de IT de principio a fin.</div></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-card_bg border-t border-card_border mt-16">
+        <div class="max-w-7xl mx-auto px-6 py-8 text-center text-slate-400 text-sm">
+            <p>&copy; 2024 Inversiones BelCam - KenoCia. Todos los derechos reservados.</p>
+            <div class="mt-4 space-x-4 md:space-x-6">
+                 <a href="mailto:consultoria@kenocia.com" class="text-slate-400 hover:text-primary">consultoria@kenocia.com</a>
+                 <span class="text-slate-600 hidden md:inline">|</span>
+                 <a href="http://www.kenocia.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary">www.kenocia.com</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
