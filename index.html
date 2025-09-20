@@ -31,8 +31,6 @@
             color: #e2e8f0;
             overflow-x: hidden;
         }
-
-        /* Subtle animated background */
         body::before {
             content: '';
             position: fixed;
@@ -46,32 +44,26 @@
             z-index: -1;
             animation: move-aurora 25s linear infinite;
         }
-
         @keyframes move-aurora {
             0% { transform: translate(0, 0) rotate(0deg); }
             50% { transform: translate(10px, 20px) rotate(180deg); }
             100% { transform: translate(0, 0) rotate(360deg); }
         }
-        
         .service-card, .team-card, .vision-mission-card, .value-prop-card, .timeline-item {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
-
         .service-card:hover, .team-card:hover {
             transform: translateY(-10px);
             border-color: rgba(56, 189, 248, 0.4);
             box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.15);
         }
-
-        /* Scroll reveal animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
@@ -83,12 +75,12 @@
     <!-- Encabezado -->
     <header class="bg-background/80 border-b border-card_border sticky top-0 z-50 backdrop-filter backdrop-blur-lg">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
+            <a href="index.html" class="flex items-center space-x-2">
                 <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                 <h1 class="text-xl font-bold text-white">Inversiones BelCam - KenoCia</h1>
             </a>
             <ul class="hidden md:flex space-x-8 text-sm font-medium">
-                <li><a href="#servicios" class="hover:text-primary transition-colors">Servicios</a></li>
+                <li><a href="servicios.html" class="hover:text-primary transition-colors">Servicios</a></li>
                 <li><a href="#equipo" class="hover:text-primary transition-colors">Equipo</a></li>
                 <li><a href="#modelo" class="hover:text-primary transition-colors">Modelo</a></li>
                 <li><a href="#contacto" class="hover:text-primary transition-colors">Contacto</a></li>
@@ -121,75 +113,63 @@
             </div>
         </section>
 
-        <!-- Servicios -->
+        <!-- Servicios Resumen -->
         <section id="servicios" class="animate-on-scroll">
             <h2 class="text-4xl font-bold mb-12 text-center text-white">Catálogo de <span class="text-primary">Soluciones</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Finanzas y Contabilidad</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Contabilidad y Facturación Electrónica</li>
-                        <li>Gestión Fiscal (SAR Honduras)</li>
-                        <li>Punto de Venta e Inventario</li>
-                        <li>Integraciones con Business Intelligence (BI)</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Finanzas y Contabilidad</h3>
+                        <p class="text-slate-300 text-sm">Gestión fiscal, facturación electrónica, punto de venta e inventarios.</p>
+                    </div>
+                    <a href="servicios.html#finanzas" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197M15 21a6 6 0 006-5.197M12 12a4 4 0 110-8 4 4 0 010 8z"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Nóminas y Recursos Humanos</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Nóminas HN adaptadas a la ley</li>
-                        <li>Liquidaciones y control de empleados</li>
-                        <li>Gestión de Asistencia y Reclutamiento</li>
-                        <li>Portal del empleado y autoservicio</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197M15 21a6 6 0 006-5.197M12 12a4 4 0 110-8 4 4 0 010 8z"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Nóminas y Recursos Humanos</h3>
+                         <p class="text-slate-300 text-sm">Nóminas HN, liquidaciones, control de asistencia y portal del empleado.</p>
+                    </div>
+                    <a href="servicios.html#rrhh" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
                 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.707 4.293l1.414 1.414M1.414 4.293l1.414 1.414M16.293 4.293l-1.414 1.414M22.586 4.293l-1.414 1.414M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Sitio Web y eCommerce</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Diseño de Sitios Web corporativos</li>
-                        <li>Comercio Electrónico y Tienda en Línea</li>
-                        <li>Integración con inventario y ventas</li>
-                        <li>Plataformas de gestión de contenido (CMS)</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.707 4.293l1.414 1.414M1.414 4.293l1.414 1.414M16.293 4.293l-1.414 1.414M22.586 4.293l-1.414 1.414M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Sitio Web y eCommerce</h3>
+                        <p class="text-slate-300 text-sm">Diseño web corporativo, tiendas en línea e integración con inventario.</p>
+                    </div>
+                     <a href="servicios.html#web" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Consultoría ERP (Odoo y SAP)</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Implementación Odoo (v15-18) y SAP B1</li>
-                        <li>Migración y optimización de sistemas</li>
-                        <li>Integraciones (Angular, .NET, React, Flutter)</li>
-                        <li>Desarrollo de módulos a medida</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Consultoría ERP (Odoo y SAP)</h3>
+                        <p class="text-slate-300 text-sm">Implementación, migración, módulos a medida e integraciones.</p>
+                    </div>
+                     <a href="servicios.html#erp" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Infraestructura y Desarrollo</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Virtualización (Proxmox, VMware, Docker)</li>
-                        <li>Redes y Seguridad (Fortinet, Cisco)</li>
-                        <li>Apps móviles para logística</li>
-                        <li>Contact Center con IA y Telefonía IP</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Infraestructura y Desarrollo</h3>
+                        <p class="text-slate-300 text-sm">Virtualización, redes, seguridad, apps móviles y contact center.</p>
+                    </div>
+                    <a href="servicios.html#infra" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
 
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card">
-                    <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg></div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Equipamiento y Hardware</h3>
-                    <ul class="space-y-2 list-disc list-inside text-slate-300 text-sm">
-                        <li>Laptops, desktops y servidores (Dell, HP, Lenovo)</li>
-                        <li>Equipos de Networking (Cisco, Fortinet, Ubiquiti)</li>
-                        <li>Periféricos y licencias (Microsoft, Logitech)</li>
-                        <li>Equipamiento integral "llave en mano"</li>
-                    </ul>
+                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
+                    <div>
+                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg></div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Equipamiento y Hardware</h3>
+                        <p class="text-slate-300 text-sm">Venta de laptops, servidores, equipos de networking y licencias.</p>
+                    </div>
+                     <a href="servicios.html#hardware" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
                 </div>
             </div>
         </section>
@@ -275,7 +255,7 @@
                     <p class="text-slate-400 mt-2 text-sm">Atención continua para resolver tus dudas y asegurar la operatividad.</p>
                 </div>
                 <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
-                    <h3 class="text-lg font-semibold text-primary">Invesión Adaptables</h3>
+                    <h3 class="text-lg font-semibold text-primary">Soluciones Adaptables</h3>
                     <p class="text-slate-400 mt-2 text-sm">Creamos soluciones que se ajustan al tamaño y necesidades de tu negocio.</p>
                 </div>
                 <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
@@ -367,8 +347,3 @@
 
 </body>
 </html>
-
-
-
-
-
