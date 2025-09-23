@@ -3,351 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inversiones BelCam - KenoCia | Soluciones Tecnológicas</title>
+    <title>Sitio Web Personal – Daniel Beteta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#38bdf8', // light blue
-                        secondary: '#818cf8', // indigo
-                        background: '#0f172a', // slate-900
-                        text: '#e2e8f0', // slate-200
-                        card_bg: 'rgba(30, 41, 59, 0.6)', // slate-800 with transparency
-                        card_border: 'rgba(255, 255, 255, 0.1)',
-                    },
-                },
-            },
-        };
-    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            overflow-x: hidden;
+            background-color: #0f172a; /* slate-900 */
+            color: #cbd5e1; /* slate-300 */
         }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: 
-                radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.15), transparent 40%),
-                radial-gradient(circle at 85% 75%, rgba(129, 140, 248, 0.15), transparent 40%);
-            z-index: -1;
-            animation: move-aurora 25s linear infinite;
+        .section-title {
+            @apply text-3xl font-bold text-slate-100 mb-8 text-center;
         }
-        @keyframes move-aurora {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(10px, 20px) rotate(180deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
+        .card {
+            @apply bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300;
         }
-        .service-card, .team-card, .vision-mission-card, .value-prop-card, .timeline-item {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .service-card:hover, .team-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.15);
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .backdrop-blur-md {
+             background-color: rgba(15, 23, 42, 0.8);
         }
     </style>
 </head>
-<body class="bg-background text-text">
+<body class="bg-slate-900 text-slate-300">
 
-    <!-- Encabezado -->
-    <header class="bg-background/80 border-b border-card_border sticky top-0 z-50 backdrop-filter backdrop-blur-lg">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                <h1 class="text-xl font-bold text-white">Inversiones BelCam - KenoCia</h1>
-            </a>
-            <ul class="hidden md:flex space-x-8 text-sm font-medium">
-                <li><a href="servicios.html" class="hover:text-primary transition-colors">Servicios</a></li>
-                <li><a href="#equipo" class="hover:text-primary transition-colors">Equipo</a></li>
-                <li><a href="#modelo" class="hover:text-primary transition-colors">Modelo</a></li>
-                <li><a href="#contacto" class="hover:text-primary transition-colors">Contacto</a></li>
-            </ul>
+    <!-- Header -->
+    <header class="backdrop-blur-md sticky top-0 z-50 border-b border-slate-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-xl font-bold text-white">Daniel Beteta</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre-mi" class="hover:text-blue-400 transition-colors">Sobre mí</a>
+                <a href="services.html" class="hover:text-blue-400 transition-colors">Servicios</a>
+                <a href="#experiencia" class="hover:text-blue-400 transition-colors">Experiencia</a>
+                <a href="#portafolio" class="hover:text-blue-400 transition-colors">Portafolio</a>
+                <a href="#contacto" class="hover:text-blue-400 transition-colors">Contacto</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#sobre-mi" class="block hover:text-blue-400 transition-colors py-2">Sobre mí</a>
+            <a href="services.html" class="block hover:text-blue-400 transition-colors py-2">Servicios</a>
+            <a href="#experiencia" class="block hover:text-blue-400 transition-colors py-2">Experiencia</a>
+            <a href="#portafolio" class="block hover:text-blue-400 transition-colors py-2">Portafolio</a>
+            <a href="#contacto" class="block hover:text-blue-400 transition-colors py-2">Contacto</a>
+        </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 space-y-32 py-20">
-        <!-- Sección principal (Hero) -->
-        <section class="text-center space-y-6 pt-12">
-            <p class="text-lg text-primary font-semibold animate-on-scroll" style="transition-delay: 100ms;">Impulsamos el desarrollo de tu empresa a través de la tecnología</p>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white animate-on-scroll" style="transition-delay: 200ms;">Digitalizamos Procesos con Odoo y SAP</h1>
-            <p class="text-lg text-slate-300 max-w-3xl mx-auto animate-on-scroll" style="transition-delay: 300ms;">
-                Soluciones integrales para la transformación digital y optimización de su empresa, desde ERP de clase mundial hasta infraestructura tecnológica robusta.
-            </p>
-        </section>
-
-        <!-- Visión y Misión -->
-        <section id="vision-mision" class="animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-12 text-center text-white">Nuestra <span class="text-primary">Visión y Misión</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg vision-mission-card">
-                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-3xl mr-3">🌟</span> Visión</h3>
-                    <p class="text-slate-300">Ser el aliado tecnológico más confiable y estratégico en Honduras y la región, ofreciendo soluciones empresariales innovadoras que impulsen la eficiencia, competitividad y transformación digital de nuestros clientes.</p>
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Daniel Beteta</h1>
+                <div class="mt-6 text-lg md:text-xl font-medium text-blue-400">
+                    <p>Desarrollador FullStack & Consultor Tecnológico</p>
+                    <p class="mt-1">Consultor y Desarrollador Odoo (v. 11–18)</p>
+                     <p class="mt-1">CTO & Cofundador de KenoCia</p>
                 </div>
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg vision-mission-card">
-                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center"><span class="text-3xl mr-3">🎯</span> Misión</h3>
-                    <p class="text-slate-300">Brindar soluciones integrales y proyectos llave en mano, con enfoque en la calidad, cumplimiento fiscal, innovación y soporte especializado para garantizar el crecimiento sostenible de nuestros clientes.</p>
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-slate-400">
+                    “Impulso la transformación digital de grandes empresas, PYMES y MYPYMES con soluciones tecnológicas escalables y personalizadas.”
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#contacto" class="w-full sm:w-auto bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition-all duration-300 transform hover:scale-105">
+                        Contáctame
+                    </a>
+                    <a href="services.html" class="w-full sm:w-auto bg-slate-700 text-slate-200 font-semibold py-3 px-8 rounded-lg hover:bg-slate-600 transition-all duration-300">
+                        Ver mis Servicios
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Servicios Resumen -->
-        <section id="servicios" class="animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-12 text-center text-white">Catálogo de <span class="text-primary">Soluciones</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Finanzas y Analítica</h3>
-                        <p class="text-slate-300 text-sm">Gestión fiscal, automatización contable, BI y modelos de negocio.</p>
-                    </div>
-                    <a href="servicios.html#finanzas" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197M15 21a6 6 0 006-5.197M12 12a4 4 0 110-8 4 4 0 010 8z"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Nóminas y Recursos Humanos</h3>
-                         <p class="text-slate-300 text-sm">Nóminas HN, liquidaciones, control de asistencia y portal del empleado.</p>
-                    </div>
-                    <a href="servicios.html#rrhh" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
-                </div>
-                
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.707 4.293l1.414 1.414M1.414 4.293l1.414 1.414M16.293 4.293l-1.414 1.414M22.586 4.293l-1.414 1.414M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Web y Marketing Digital</h3>
-                        <p class="text-slate-300 text-sm">Diseño web, eCommerce, automatización de marketing y branding.</p>
-                    </div>
-                     <a href="servicios.html#web" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Consultoría ERP (Odoo y SAP)</h3>
-                        <p class="text-slate-300 text-sm">Implementación, add-ons fiscales, módulos verticales e integraciones.</p>
-                    </div>
-                     <a href="servicios.html#erp" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Infraestructura y Cloud</h3>
-                        <p class="text-slate-300 text-sm">Virtualización, cloud híbrida, backup & DR, seguridad y hosting Odoo.</p>
-                    </div>
-                    <a href="servicios.html#infra" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
-                </div>
-
-                <div class="p-8 rounded-2xl border border-card_border bg-card_bg shadow-lg service-card flex flex-col justify-between">
-                    <div>
-                        <div class="text-primary mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg></div>
-                        <h3 class="text-xl font-semibold text-white mb-4">Equipamiento y Hardware</h3>
-                        <p class="text-slate-300 text-sm">Venta de laptops, servidores, equipos de networking y licencias.</p>
-                    </div>
-                     <a href="servicios.html#hardware" class="mt-6 text-primary font-semibold inline-block hover:underline">Ver Detalles →</a>
+                <div class="mt-8 text-slate-400 flex items-center justify-center gap-2">
+                    <i data-lucide="phone"></i>
+                    <span>+504 3173-5559</span>
                 </div>
             </div>
         </section>
 
-        <!-- Nuestro Equipo -->
-        <section id="equipo" class="animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-12 text-center text-white">Nuestro <span class="text-primary">Equipo</span></h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-                <!-- Jorge Urbina -->
-                <div class="text-center p-6 rounded-2xl border border-card_border bg-card_bg team-card">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 bg-primary/20 object-cover" src="https://placehold.co/96x96/38bdf8/0f172a?text=JU" alt="Foto de Jorge Urbina">
-                    <h3 class="text-xl font-bold text-white">Jorge Urbina</h3>
-                    <p class="text-primary font-semibold text-sm">CEO y Fundador</p>
-                    <p class="text-slate-400 mt-2 text-xs">Lidera la estrategia y visión de la compañía, enfocado en la innovación y en construir relaciones de valor con cada cliente.</p>
-                </div>
-                <!-- Daniel Beteta -->
-                <div class="text-center p-6 rounded-2xl border border-card_border bg-card_bg team-card">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 bg-primary/20 object-cover" src="https://placehold.co/96x96/38bdf8/0f172a?text=DB" alt="Foto de Daniel Beteta">
-                    <h3 class="text-xl font-bold text-white">Daniel Beteta</h3>
-                    <p class="text-primary font-semibold text-sm">CTO y Cofundador</p>
-                    <p class="text-slate-400 mt-2 text-xs">Arquitecto de software que aporta una visión estratégica para impulsar el éxito. Su habilidad se extiende a múltiples lenguajes de desarrollo, garantizando soluciones versátiles.</p>
-                </div>
-                <!-- Gilberto Salguero -->
-                <div class="text-center p-6 rounded-2xl border border-card_border bg-card_bg team-card">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 bg-primary/20 object-cover" src="https://placehold.co/96x96/38bdf8/0f172a?text=GS" alt="Foto de Gilberto Salguero">
-                    <h3 class="text-xl font-bold text-white">Gilberto Salguero</h3>
-                    <p class="text-primary font-semibold text-sm">Ger. Infra. y Cofundador</p>
-                    <p class="text-slate-400 mt-2 text-xs">Experto en la arquitectura y gestión de infraestructura de TI. Asegura la escalabilidad, seguridad y rendimiento de todas nuestras soluciones.</p>
-                </div>
-                <!-- Cezar Munguia -->
-                <div class="text-center p-6 rounded-2xl border border-card_border bg-card_bg team-card">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 bg-primary/20 object-cover" src="https://placehold.co/96x96/38bdf8/0f172a?text=CM" alt="Foto de Cezar Munguia">
-                    <h3 class="text-xl font-bold text-white">Cezar Munguia</h3>
-                    <p class="text-primary font-semibold text-sm">Soporte Técnico y Funcional</p>
-                    <p class="text-slate-400 mt-2 text-xs">Garantiza la mejor atención a nuestros clientes, ayudándoles a optimizar sus procesos y a sacar el máximo provecho de la plataforma.</p>
-                </div>
-                <!-- Bryan Murcia -->
-                <div class="text-center p-6 rounded-2xl border border-card_border bg-card_bg team-card">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 bg-primary/20 object-cover" src="https://placehold.co/96x96/38bdf8/0f172a?text=BM" alt="Foto de Bryan Murcia">
-                    <h3 class="text-xl font-bold text-white">Bryan Murcia</h3>
-                    <p class="text-primary font-semibold text-sm">Soporte Técnico e Infraestructura</p>
-                    <p class="text-slate-400 mt-2 text-xs">Especialista en mantenimiento y soporte de sistemas, asegurando la continuidad y eficiencia de la infraestructura tecnológica de nuestros clientes.</p>
+        <!-- About Me Section -->
+        <section id="sobre-mi" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="max-w-4xl mx-auto bg-slate-800 rounded-xl shadow-lg p-8 md:p-12 text-center border border-slate-700">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://placehold.co/120x120/1e293b/94a3b8?text=DB" alt="Daniel Beteta" class="rounded-full">
+                    </div>
+                    <p class="text-lg text-slate-400 leading-relaxed">
+                        Soy Daniel Beteta, Desarrollador FullStack & Consultor Tecnológico, con experiencia en la creación de soluciones digitales a la medida de cada empresa.
+                        <br><br>
+                        Ingeniero en Computación egresado de la UTH. Como CTO y Cofundador de KenoCia, lidero la estrategia tecnológica y el desarrollo de productos que ayudan a empresas de todos los tamaños a optimizar sus procesos. Me especializo en Odoo, personalizando módulos e implementando integraciones para que las empresas cuenten con plataformas sólidas, escalables y adaptadas a sus necesidades.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Modelo de Trabajo -->
-        <section id="modelo" class="animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-16 text-center text-white">Nuestro Modelo de <span class="text-primary">Trabajo</span></h2>
-            <div class="relative max-w-2xl mx-auto">
-                <div class="absolute left-4 top-0 h-full w-0.5 bg-primary/30"></div>
-                <div class="space-y-12">
-                    <div class="relative pl-12 timeline-item">
-                        <div class="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background font-bold ring-8 ring-background">1</div>
-                        <h3 class="text-xl font-semibold text-white">Diagnóstico y Levantamiento</h3>
-                        <p class="text-slate-400 mt-1">Análisis profundo de sus requerimientos y objetivos de negocio.</p>
-                    </div>
-                    <div class="relative pl-12 timeline-item">
-                        <div class="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background font-bold ring-8 ring-background">2</div>
-                        <h3 class="text-xl font-semibold text-white">Diseño de la Solución</h3>
-                        <p class="text-slate-400 mt-1">Creación de una arquitectura tecnológica a la medida de sus necesidades.</p>
-                    </div>
-                    <div class="relative pl-12 timeline-item">
-                        <div class="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background font-bold ring-8 ring-background">3</div>
-                        <h3 class="text-xl font-semibold text-white">Implementación y Capacitación</h3>
-                        <p class="text-slate-400 mt-1">Ejecución del proyecto y transferencia de conocimiento a su equipo.</p>
-                    </div>
-                    <div class="relative pl-12 timeline-item">
-                        <div class="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-background font-bold ring-8 ring-background">4</div>
-                        <h3 class="text-xl font-semibold text-white">Soporte y Mejora Continua</h3>
-                        <p class="text-slate-400 mt-1">Acompañamiento post-implementación para garantizar el éxito a largo plazo.</p>
-                    </div>
+        <!-- Technical Skills Section -->
+        <section id="habilidades" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card text-center"><h3 class="font-bold text-lg text-slate-100 mb-2">Frontend</h3><p>Angular, TypeScript, JavaScript, Flutter, Flet</p></div>
+                    <div class="card text-center"><h3 class="font-bold text-lg text-slate-100 mb-2">Backend</h3><p>Python, Node.js, C#, .NET</p></div>
+                    <div class="card text-center"><h3 class="font-bold text-lg text-slate-100 mb-2">Bases de datos</h3><p>SQL Server, PostgreSQL, MySQL, Oracle</p></div>
+                    <div class="card text-center"><h3 class="font-bold text-lg text-slate-100 mb-2">Infraestructura</h3><p>Servidores, Redes, VPS, SaaS</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section Preview -->
+        <section id="servicios-preview" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Servicios Destacados</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="card"><div class="flex items-center gap-4 mb-4"><div class="bg-blue-900/50 p-3 rounded-full"><i data-lucide="database" class="text-blue-400"></i></div><h3 class="font-bold text-xl text-slate-100">Consultoría & Desarrollo en Odoo</h3></div><p class="text-slate-400">Implementación de ERP/POS, personalización de módulos y optimización de procesos.</p></div>
+                    <div class="card"><div class="flex items-center gap-4 mb-4"><div class="bg-blue-900/50 p-3 rounded-full"><i data-lucide="code" class="text-blue-400"></i></div><h3 class="font-bold text-xl text-slate-100">Desarrollo de Software a Medida</h3></div><p class="text-slate-400">Aplicaciones web y móviles, sistemas administrativos y soluciones escalables.</p></div>
+                </div>
+                <div class="text-center mt-12">
+                     <a href="services.html" class="text-blue-400 font-semibold hover:text-blue-300 transition-colors">
+                        Ver todos los servicios &rarr;
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Valor Diferencial -->
-        <section id="diferencial" class="animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-12 text-center text-white">Nuestra Propuesta de <span class="text-primary">Valor</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
-                    <h3 class="text-lg font-semibold text-primary">Soporte 24/7</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Atención continua para resolver tus dudas y asegurar la operatividad.</p>
-                </div>
-                <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
-                    <h3 class="text-lg font-semibold text-primary">Inversión Adaptable</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Creamos soluciones que se ajustan al tamaño y necesidades de tu negocio.</p>
-                </div>
-                <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
-                    <h3 class="text-lg font-semibold text-primary">Implementación Rápida</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Metodologías ágiles para poner en marcha tus soluciones en tiempo récord.</p>
-                </div>
-                <div class="p-6 rounded-2xl border border-card_border bg-card_bg/80 value-prop-card">
-                    <h3 class="text-lg font-semibold text-primary">Adaptación Local</h3>
-                    <p class="text-slate-400 mt-2 text-sm">Soluciones diseñadas para cumplir con la normativa fiscal y laboral de tu país, asegurando una operación sin contratiempos.</p>
+        <!-- Experience Section -->
+        <section id="experiencia" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                <div class="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-slate-700">
+                    <div class="relative pl-12"><div class="absolute left-0 top-1.5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center -translate-x-1/2 border-4 border-slate-900"><i data-lucide="briefcase" class="text-white"></i></div><h3 class="font-bold text-xl text-slate-100">CTO & Cofundador – KenoCia</h3><p class="text-slate-400 text-sm">2022 – Actualidad</p><p class="mt-2 text-slate-400">Lidero la innovación tecnológica y desarrollo de soluciones digitales para empresas de todos los tamaños.</p></div>
+                    <div class="relative pl-12"><div class="absolute left-0 top-1.5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center -translate-x-1/2 border-4 border-slate-900"><i data-lucide="briefcase" class="text-white"></i></div><h3 class="font-bold text-xl text-slate-100">Desarrollador FullStack Freelance</h3><p class="text-slate-400 text-sm">2021 – Actualidad</p><p class="mt-2 text-slate-400">Creación de soluciones para e-commerce, logística, administración y finanzas.</p></div>
+                    <div class="relative pl-12"><div class="absolute left-0 top-1.5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center -translate-x-1/2 border-4 border-slate-900"><i data-lucide="briefcase" class="text-white"></i></div><h3 class="font-bold text-xl text-slate-100">Desarrollador Junior – CIT</h3><p class="text-slate-400 text-sm">Sept 2020 – Feb 2022</p><p class="mt-2 text-slate-400">Proyectos con Angular, NodeJS, C#, .NET y APIs REST.</p></div>
+                    <div class="relative pl-12"><div class="absolute left-0 top-1.5 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center -translate-x-1/2 border-4 border-slate-900"><i data-lucide="briefcase" class="text-white"></i></div><h3 class="font-bold text-xl text-slate-100">Soporte Técnico – Credisol</h3><p class="text-slate-400 text-sm">Oct 2019 – Mar 2020</p><p class="mt-2 text-slate-400">Administración de bases de datos y soporte técnico.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Contacto -->
-        <section id="contacto" class="bg-card_bg border border-card_border rounded-2xl p-10 animate-on-scroll">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold text-white">Ponte en Contacto</h2>
-                <p class="text-slate-300 mt-4 mb-8 max-w-2xl mx-auto">Hablemos sobre cómo nuestras soluciones pueden ayudarte a alcanzar tus objetivos.</p>
+        <!-- Portfolio Section -->
+        <section id="portafolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Portafolio</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card"><h3 class="font-bold text-lg text-slate-100 mb-2">ERP con Odoo</h3><p class="text-slate-400">Para retail y logística.</p></div>
+                    <div class="card"><h3 class="font-bold text-lg text-slate-100 mb-2">POS para restaurantes</h3><p class="text-slate-400">Con integración en tiempo real.</p></div>
+                    <div class="card"><h3 class="font-bold text-lg text-slate-100 mb-2">App móvil en Flutter</h3><p class="text-slate-400">Integrada con Odoo.</p></div>
+                    <div class="card"><h3 class="font-bold text-lg text-slate-100 mb-2">Infraestructura Tech</h3><p class="text-slate-400">Para empresas de servicios.</p></div>
+                </div>
             </div>
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-                <!-- Información general -->
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary flex items-center">
-                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            Contacto General
-                        </h3>
-                        <a href="mailto:consultoria@kenocia.com" class="text-lg text-white hover:text-primary transition-colors ml-9 block mt-2">consultoria@kenocia.com</a>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-primary flex items-center">
-                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"></path></svg>
-                            Sitio Web
-                        </h3>
-                        <a href="http://www.kenocia.com" target="_blank" rel="noopener noreferrer" class="text-lg text-white hover:text-primary transition-colors ml-9 block mt-2">www.kenocia.com</a>
-                    </div>
-                     <div>
-                        <h3 class="text-xl font-semibold text-primary flex items-center">
-                            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            LinkedIn
-                        </h3>
-                        <a href="https://www.linkedin.com/company/kenosis-company/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="text-lg text-white hover:text-primary transition-colors ml-9 block mt-2">/kenosis-company</a>
-                    </div>
-                </div>
-                <!-- Contacto Directo -->
-                <div>
-                     <h3 class="text-xl font-semibold text-primary flex items-center">
-                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        Contacto Directo
-                    </h3>
-                    <ul class="mt-4 space-y-3 text-lg">
-                        <li class="flex justify-between items-center"><span class="text-slate-300">Jorge Urbina (CEO)</span> <span class="text-white font-medium">+504 3281-4320</span></li>
-                        <li class="flex justify-between items-center"><span class="text-slate-300"></span> <span class="text-white font-medium">+1 (470) 234-0835</span></li>
-                        <li class="flex justify-between items-center"><span class="text-slate-300">Daniel Beteta (CTO)</span> <span class="text-white font-medium">+504 3173-5559</span></li>
-                        <li class="flex justify-between items-center"><span class="text-slate-300">G. Salguero (Ger. Infra.)</span> <span class="text-white font-medium">+504 3222-0029</span></li>
-                    </ul>
-                </div>
+        </section>
+
+        <!-- Work Philosophy Section -->
+        <section id="filosofia" class="py-20 bg-blue-900/70">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Filosofía de Trabajo</h2>
+                <p class="max-w-3xl mx-auto text-lg text-blue-200">
+                    "Creo firmemente que la tecnología debe ser un habilitador de valor, no una barrera. Mi misión es ayudar a empresas de cualquier tamaño a simplificar, automatizar y escalar sus procesos, entregando soluciones eficientes, accesibles y sostenibles en el tiempo."
+                </p>
             </div>
         </section>
 
     </main>
 
-    <!-- Pie de página -->
-    <footer class="bg-card_bg border-t border-card_border mt-16">
-        <div class="max-w-7xl mx-auto px-6 py-8 text-center text-slate-400 text-sm">
-            <p>&copy; 2024 Inversiones BelCam - KenoCia. Todos los derechos reservados.</p>
-            <div class="mt-4 space-x-4 md:space-x-6">
-                 <a href="mailto:consultoria@kenocia.com" class="text-slate-400 hover:text-primary">consultoria@kenocia.com</a>
-                 <span class="text-slate-600 hidden md:inline">|</span>
-                 <a href="http://www.kenocia.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary">www.kenocia.com</a>
+    <!-- Footer / Contact -->
+    <footer id="contacto" class="bg-black/30 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Contacto</h2>
+            <p class="mb-8 text-slate-400">¿Listo para impulsar tu negocio? Hablemos.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-8">
+                <a href="mailto:luisbeteta.kenocia@gmail.com" class="flex items-center gap-2 hover:text-white"><i data-lucide="mail"></i>luisbeteta.kenocia@gmail.com</a>
+                <a href="https://wa.me/50431735559" target="_blank" class="flex items-center gap-2 hover:text-white"><i data-lucide="message-circle"></i>+504 3173-5559</a>
             </div>
+            <div class="flex justify-center items-center gap-6">
+                <a href="https://www.linkedin.com/in/luis-daniel-beteta-rodriguez-315349141/" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                <a href="#" target="_blank" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-7 h-7"></i></a>
+            </div>
+            <p class="mt-10 text-sm text-slate-500">&copy; 2025 Daniel Beteta. Todos los derechos reservados.</p>
         </div>
     </footer>
-    
+
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        lucide.createIcons();
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) { // md breakpoint
+                    mobileMenu.classList.add('hidden');
                 }
             });
-        }, {
-            threshold: 0.1
         });
-
-        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-        elementsToAnimate.forEach((el) => observer.observe(el));
     </script>
-
 </body>
 </html>
-
-
-
 
